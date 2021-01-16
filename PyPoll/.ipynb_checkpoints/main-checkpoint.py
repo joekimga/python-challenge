@@ -37,15 +37,16 @@ with open(file_to_load) as data:
     #total_votes
     for row in csvreader:
         total_votes += 1
-        candidate = row[0]
+        candidate = row[2]
         if candidate in candidates.keys():
             candidates[candidate] += 1
         else:
             candidates[candidate] = 1
-        #print(candidates)
-        print(row)
+        print(candidates)
+
 
     #Find Candidate First, percentage
+
 
 # count candidates
 ########  go from list to a set to a list   ########
@@ -53,17 +54,8 @@ with open(file_to_load) as data:
 
 # count candidates,
 
-percentage = total_votes/candidates_num
-print(percentage)
+
+
 # winner = Max(total_votes)
-max(candidate)
 
 
-# results = (
-#     f"Total Votes\n"
-#     f"Candidates: {}"
-#     f"Percentate: {}"
-#     f""
-
-# )
-# print("results")

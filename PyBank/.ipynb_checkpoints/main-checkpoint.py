@@ -4,9 +4,7 @@ import csv
 
 # Setting the path
 dir = "C:/Users/joeki/Desktop/python-challenge/PyBank/"
-# Path in from Resources Folder
 file_to_load = os.path.join(dir, "Resources", "budget_data.csv")
-# Path out to the budget_analysis.txt file
 file_to_save = os.path.join(dir, "analysis", "budget_analysis.txt")
 
 # Variables
@@ -14,7 +12,7 @@ total_months = 0
 total_net = 0
 #profit_change = we will calculate this anyway
 profit_change_list = []
-#average :  this will be calculated anyway so no need to declare
+#average :  this will be calculated this anyway so no need to declare
 greatest_increase = ["", 0]
 greatest_decrease = ["", 9999999999999999999]
 
