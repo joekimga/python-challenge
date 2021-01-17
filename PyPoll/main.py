@@ -30,11 +30,30 @@ with open(file_to_load) as data:
         else:
             candidates[candidate] = 1
 # print(candidates)
-# print(total_votes)
-for candidate, votes in candidates.items():
-    percent = round(votes/total_votes, 2)
-    print(candidate, percent, votes)
+print(total_votes)
 
+with open(file_to_save, "w") as txt_file:
+    election_result = (
+        f"Election Result\n"
+        f"---------------------\n"
+        f"Total Votes: {total_votes}\n"
+        f"---------------------\n")
+    txt_file.write(election_result)
+    for candidate, votes in candidates.items():
+        percent = round(votes/total_votes * 100, 2)
+        candidate_result = f"{candidate}: {percent:.2f}% ({votes})\n"
+        print(candidate_result)
+        txt_file.write(candidate_result)
+    winner = max(candidates, key = candidates.get)
+    winning_candidate = f"Winner: {winner}\n"
+    #print('Winner', winner)
+    txt_file.write(winning_candidate)
+    print('Winner', winner)
+# results = (
+#     f"Total Votes\n"
+#     f"Candidates: {}"
+#     f"Percentate: {}"
+#     f"Winner": {}""
 
-print('Max', max(candidates, key = candidates.get))
-
+# )
+# print("results")
